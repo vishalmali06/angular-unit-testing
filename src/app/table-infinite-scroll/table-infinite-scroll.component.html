@@ -1,0 +1,30 @@
+<!-- <p>table-infinite-scroll works!</p> -->
+<div class="table-container" infiniteScroll [infiniteScrollDistance]="2" [infiniteScrollThrottle]="300" (scrolled)="onScroll()">
+    <!-- <mat-card> -->
+      <table mat-table [dataSource]="posts">
+        
+        <!-- ID Column -->
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef> ID </th>
+          <td mat-cell *matCellDef="let post"> {{post.id}} </td>
+        </ng-container>
+  
+        <!-- Title Column -->
+        <ng-container matColumnDef="title">
+          <th mat-header-cell *matHeaderCellDef> Title </th>
+          <td mat-cell *matCellDef="let post"> {{post.title}} </td>
+        </ng-container>
+  
+        <!-- Body Column -->
+        <ng-container matColumnDef="body">
+          <th mat-header-cell *matHeaderCellDef> Body </th>
+          <td mat-cell *matCellDef="let post"> {{post.body}} </td>
+        </ng-container>
+  
+        <!-- Header and Row Definitions -->
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    <!-- </mat-card> -->
+  </div>
+  
